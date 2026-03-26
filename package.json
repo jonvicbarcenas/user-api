@@ -1,0 +1,41 @@
+{
+    "name": "user-api",
+    "version": "1.0.0",
+    "description": "User data API for MyroniX — handles profiles, watchlist, history, comments, chat, trivia, announcements, settings, and analytics",
+    "main": "dist/src/server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node dist/src/server.js",
+        "dev": "tsx watch src/server.ts",
+        "build": "tsc",
+        "buildnstart": "tsc && node dist/src/server.js",
+        "prepare": "node .husky/install.mjs",
+        "healthcheck": "curl -f http://localhost:4001/health",
+        "typecheck": "tsc --noEmit",
+        "format": "prettier --cache --write .",
+        "format:check": "prettier --cache --check ."
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@hono/node-server": "^1.14.2",
+        "@types/ws": "^8.18.1",
+        "dotenv": "^16.5.0",
+        "envalid": "^8.0.0",
+        "firebase-admin": "^13.0.2",
+        "hono": "^4.7.10",
+        "hono-rate-limiter": "^0.4.2",
+        "ioredis": "^5.6.1",
+        "mongodb": "^7.0.0",
+        "pino": "^9.7.0",
+        "pino-pretty": "^13.0.0",
+        "ws": "^8.19.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.21",
+        "husky": "^9.1.7",
+        "prettier": "^3.5.3",
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3"
+    }
+}
